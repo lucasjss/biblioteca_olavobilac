@@ -83,6 +83,10 @@ DATABASES = {
     }
 }
 
+# chave API Google Books
+GOOGLE_BOOKS_API_KEY = 'AIzaSyByWziaFvBglInl1bvv-0nZKi2R97qflow'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

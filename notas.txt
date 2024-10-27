@@ -1,0 +1,13 @@
+api chave: AIzaSyByWziaFvBglInl1bvv-0nZKi2R97qflow
+
+usuario adm django : coelho?
+senha: manfredini?
+
+
+-------- terminal ----------
+
+python -m venv venv
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+
