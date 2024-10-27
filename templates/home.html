@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Esta é a Página Inicial</h2>
+    <p>Explore nossa biblioteca e descubra novos livros!</p>
+<a href="{% url 'livros' %}" class="btn btn-primary">Ver Livros</a>
+
+</div>
+{% endblock %}
