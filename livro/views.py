@@ -4,7 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 
 def cadastrar(request):
-    return HttpResponse('olá')
+    return HttpResponse("olá")
 
 
 def home(request):
