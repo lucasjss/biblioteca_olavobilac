@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    {% block 'head' %} {% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <title>{% block title %}Biblioteca Olavo Bilac{% endblock %}</title>
+    <style>
+        /* Cores e estilos personalizados */
+        .navbar {
+            background-color: #006400;
+            /* Verde bandeira */
+        }
+
+        .footer {
+            background-color: #8B0000;
+            /* Vermelho bandeira */
+        }
+
+        .btn-custom {
+            background-color: #FFD700;
+            /* Amarelo bandeira */
+            color: #333;
+        }
+
+        .btn-custom:hover {
+            background-color: #FFC107;
+            color: #000;
+        }
+
+        .footer span {
+            color: #fff;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Navbar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="{% url 'home' %}">Biblioteca Olavo Bilac</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand text-white" href="{% url 'home' %}">Biblioteca Olavo Bilac</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Início</a>
+                        <a class="nav-link text-white" href="{% url 'home' %}">Início</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'livros' %}">Livros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'sobre' %}">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contato' %}">Contato</a>
-                    </li>
+                    <!-- Adicione outros links aqui -->
                 </ul>
             </div>
         </nav>
     </header>
 
+    <!-- Conteúdo principal -->
     <main role="main" class="container">
-        {% block content %}
-        <!-- O conteúdo específico de cada página será inserido aqui -->
-        {% endblock %}
+        {% block content %}{% endblock %}
     </main>
 
-    <footer class="footer mt-auto py-3 bg-light">
-        <div class="container">
-            <span class="text-muted">&copy; 2024 Biblioteca Olavo Bilac. Todos os direitos reservados.</span>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span>&copy; 2024 Biblioteca Olavo Bilac. Todos os direitos reservados.</span>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
+
 </html>

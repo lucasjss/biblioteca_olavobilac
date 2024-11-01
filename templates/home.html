@@ -1,12 +1,37 @@
 {% extends 'base.html' %}
 
-{% block title %}Página Inicial{% endblock %}
+{% block title %}Página Inicial - Biblioteca Olavo Bilac{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h2>Esta é a Página Inicial</h2>
-    <p>Explore nossa biblioteca e descubra novos livros!</p>
-<a href="{% url 'livros' %}" class="btn btn-primary">Ver Livros</a>
+<div class="content-section my-5">
+    <h1 class="header-title">Biblioteca Olavo Bilac</h1>
+    <p>A Biblioteca Pública Municipal Olavo Bilac tem como missão formar leitores através dos serviços...</p>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <div>
+            <p><strong>Horário:</strong> Das 9:00h às 17:30h, sem fechar ao meio-dia.</p>
+            <p><strong>Endereço:</strong> Rua Pinheiro Machado, nº 152 - Centro, Farroupilha - RS</p>
+            <p><strong>Telefone:</strong> (54) 99632-9829</p>
+            <p><strong>Email:</strong> biblioteca@farroupilha.rs.gov.br</p>
+        </div>
+        <a href="{% url 'livros' %}" class="btn btn-custom btn-lg">Acesse o Acervo</a>
+    </div>
 
+    <!-- Seção para imagens ou conteúdo adicional -->
+    <div class="row mt-5">
+        <div class="col-md-4">
+            <div class="bg-light p-5">Imagem ou conteúdo</div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-light p-5">Imagem ou conteúdo</div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-light p-5">Imagem ou conteúdo</div>
+        </div>
+    </div>
+
+    <!-- Botão para acessar notícias -->
+    <div class="text-center mt-4">
+        <a href="{% url 'noticias' %}" class="btn btn-custom">Acesse mais notícias</a>
+    </div>
 </div>
 {% endblock %}

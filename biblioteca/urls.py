@@ -17,9 +17,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from livro import views as livro_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", livro_views.home, name="home"),
+    path("", include("livro.urls")),  # Inclui todas as URLs do aplicativo 'livro'
 ]
