@@ -9,7 +9,6 @@ class Livros(models.Model):
     co_autor = models.CharField(max_length=50, blank=True)
     disponivel = models.BooleanField(default=False)
     exemplares = models.FloatField(default=0)
-    categoria = models.CharField(max_length=30)
     capa_url = models.URLField(blank=True, null=True)
     descricao = models.TextField(blank=True, null=True)  # Campo para a sinopse
 

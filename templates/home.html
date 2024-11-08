@@ -4,32 +4,44 @@
 
 {% block content %}
 <div class="content-section my-5">
-    <h1 class="header-title">Biblioteca Olavo Bilac</h1>
-    <p>A Biblioteca Pública Municipal Olavo Bilac tem como missão formar leitores através dos serviços...</p>
-    <div class="d-flex justify-content-between align-items-center mt-4">
-        <div>
-            <p><strong>Horário:</strong> Das 9:00h às 17:30h, sem fechar ao meio-dia.</p>
-            <p><strong>Endereço:</strong> Rua Pinheiro Machado, nº 152 - Centro, Farroupilha - RS</p>
-            <p><strong>Telefone:</strong> (54) 99632-9829</p>
-            <p><strong>Email:</strong> biblioteca@farroupilha.rs.gov.br</p>
+    <div class="row">
+        <!-- Coluna de texto e informações -->
+        <div class="col-md-6">
+            <h1 class="header-title">Biblioteca Olavo Bilac</h1>
+            <p class="text-justify">A Biblioteca Pública Municipal Olavo Bilac tem como missão formar leitores através dos serviços e ações
+                que proporcionem aos indivíduos o amplo acesso à informação, ao lazer e à cultura. Seu acervo conta com
+                variadas obras, como enciclopédias, dicionários, livros de literatura, de interesse geral e históricos,
+                periódicos, DVDs, CDs e alguns exemplares em braile. É composta pelos setores de atendimento ao público,
+                empréstimo e cadastro de leitores, Espaço Infantil “Via Láctea”, Acervo de jornais locais, Sala de
+                leitura, Espaço para pesquisa e estudo, Espaço para exposições e Estação Digital.</p>
+            <div class="mt-4">
+                <p><strong>Horário:</strong> Das 9:00h às 17:30h, sem fechar ao meio-dia.</p>
+                <p><strong>Endereço:</strong> Rua Pinheiro Machado, nº 152 - Centro, Farroupilha - RS</p>
+                <p><strong>Telefone:</strong> (54) 99632-9829</p>
+                <p><strong>Email:</strong> biblioteca@farroupilha.rs.gov.br</p>
+            </div>
         </div>
-        <a href="{% url 'lista_livros' %}" class="btn btn-custom btn-lg">Acesse o Acervo</a>
+
+        <!-- Coluna do botão de acervo -->
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <a href="{% url 'lista_livros' %}" class="btn btn-custom btn-lg">Acesse o Acervo</a>
+        </div>
     </div>
 
-    <!-- Seção para imagens ou conteúdo adicional -->
+    <!-- Seção de imagens ou conteúdo adicional -->
     <div class="row mt-5">
         <div class="col-md-4">
-            <div class="bg-light p-5">Imagem ou conteúdo</div>
+            <div class="bg-light p-5 text-center">Imagem ou conteúdo</div>
         </div>
         <div class="col-md-4">
-            <div class="bg-light p-5">Imagem ou conteúdo</div>
+            <div class="bg-light p-5 text-center">Imagem ou conteúdo</div>
         </div>
         <div class="col-md-4">
-            <div class="bg-light p-5">Imagem ou conteúdo</div>
+            <div class="bg-light p-5 text-center">Imagem ou conteúdo</div>
         </div>
     </div>
 
-    <!-- Botão para acessar notícias -->
+    <!-- Botão para acessar mais notícias -->
     <div class="text-center mt-4">
         <a href="{% url 'noticias' %}" class="btn btn-custom">Acesse mais notícias</a>
     </div>

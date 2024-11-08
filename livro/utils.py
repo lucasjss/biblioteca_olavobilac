@@ -21,7 +21,6 @@ def importar_livros_google(termo_pesquisa):
             volume_info = item.get("volumeInfo", {})
             nome = volume_info.get("title", "Título Desconhecido")
             autores = volume_info.get("authors", ["Autor Desconhecido"])
-            categoria = volume_info.get("categories", ["Categoria Desconhecida"])[0]
             capa_url = volume_info.get("imageLinks", {}).get("thumbnail", "")
             descricao = volume_info.get("description", "Descrição não disponível")
 
@@ -33,7 +32,6 @@ def importar_livros_google(termo_pesquisa):
                     co_autor=autores[1] if len(autores) > 1 else "",
                     disponivel=False,  # Definido como indisponível por padrão
                     exemplares=0,  # Definido como 0 exemplares por padrão
-                    categoria=categoria,
                     capa_url=capa_url,  # Adiciona a URL da capa
                     descricao=descricao,  # Adiciona a sinopse do livro
                 )
@@ -69,7 +67,6 @@ def importar_todos_livros_google():
                 volume_info = item.get("volumeInfo", {})
                 nome = volume_info.get("title", "Título Desconhecido")
                 autores = volume_info.get("authors", ["Autor Desconhecido"])
-                categoria = volume_info.get("categories", ["Categoria Desconhecida"])[0]
                 capa_url = volume_info.get("imageLinks", {}).get("thumbnail", "")
                 descricao = volume_info.get("description", "Descrição não disponível")
 
@@ -81,7 +78,6 @@ def importar_todos_livros_google():
                         co_autor=autores[1] if len(autores) > 1 else "",
                         disponivel=False,  # Definido como indisponível (False)
                         exemplares=0,  # Definido como 0 exemplares
-                        categoria=categoria,
                         capa_url=capa_url,  # Adiciona a URL da capa
                         descricao=descricao,  # Adiciona a sinopse
                     )
