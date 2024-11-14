@@ -28,18 +28,20 @@
         </div>
     </div>
 
-    <!-- Seção de imagens ou conteúdo adicional -->
+    <!-- Seção de últimas notícias -->
     <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="bg-light p-5 text-center">Imagem ou conteúdo</div>
-        </div>
-        <div class="col-md-4">
-            <div class="bg-light p-5 text-center">Imagem ou conteúdo</div>
-        </div>
-        <div class="col-md-4">
-            <div class="bg-light p-5 text-center">Imagem ou conteúdo</div>
-        </div>
-    </div>
+        <h2 class="text-center w-100">Últimas Notícias</h2>
+        {% for noticia in ultimas_noticias %}
+            <div class="noticia">
+                {% if noticia.imagem %}
+                <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}">
+                {% endif %}
+                <h3>{{ noticia.titulo }}</h3>
+                <p>{{ noticia.conteudo|truncatewords:30 }}</p>
+                <a href="{% url 'detalhe_noticia' noticia.id %}">Leia mais</a>
+            </div>
+    {% endfor %}
+
 
     <!-- Botão para acessar mais notícias -->
     <div class="text-center mt-4">

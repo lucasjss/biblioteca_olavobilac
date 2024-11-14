@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ noticia.titulo }}{% endblock %}
+
+{% block content %}
+<h1>{{ noticia.titulo }}</h1>
+<p>{{ noticia.data_publicacao }}</p>
+<p>{{ noticia.conteudo }}</p>
+{% if noticia.imagem %}
+<img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}">
+{% endif %}
+{% endblock %}
