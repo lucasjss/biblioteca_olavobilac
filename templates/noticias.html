@@ -1,20 +1,27 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ noticia.titulo }} - Biblioteca Olavo Bilac{% endblock %}
+{% block title %}Notícias - Biblioteca Olavo Bilac{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
-    <h1>{{ noticia.titulo }}</h1>
-    <p><strong>Publicado em:</strong> {{ noticia.data_publicacao|date:"d M Y" }}</p>
-
-    {% if noticia.imagem %}
-    <div>
-        <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}" class="img-fluid">
-    </div>
-    {% endif %}
-
-    <div>
-        <p>{{ noticia.conteudo }}</p>
+    <h1 class="text-center mb-5">Todas as Notícias</h1>
+    <div class="row">
+        {% for noticia in noticias %}
+        <div class="col-md-4 mb-4">
+            <div class="noticia border p-3">
+                {% if noticia.imagem %}
+                <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}" class="img-fluid mb-2">
+                {% endif %}
+                <h3>{{ noticia.titulo }}</h3>
+                <p class="noticia-text">
+                    {{ noticia.conteudo|truncatewords:30 }}
+                </p>
+                <a href="{% url 'detalhe_noticia' noticia.id %}" class="btn btn-sm btn-custom">Leia mais</a>
+            </div>
+        </div>
+        {% empty %}
+        <p>Não há notícias disponíveis no momento.</p>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

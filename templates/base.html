@@ -44,6 +44,43 @@
         main {
             flex: 1;
         }
+
+        .noticia {
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .noticia img {
+            border-radius: 8px;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .noticia h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .noticia p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .noticia .btn {
+            margin-top: 1rem;
+        }
+
+        .noticia-text {
+            display: -webkit-box; /* Necessário para o truncamento */
+            -webkit-box-orient: vertical; /* Define a orientação */
+            -webkit-line-clamp: 3; /* Limitar a 3 linhas */
+            overflow: hidden; /* Oculta o texto extra */
+            text-overflow: ellipsis; /* Adiciona os "..." ao final */
+        }
     </style>
 </head>
 

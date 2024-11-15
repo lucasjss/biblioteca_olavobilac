@@ -22,25 +22,35 @@
             </div>
         </div>
 
-        <!-- Coluna do botão de acervo -->
-        <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
+            <!-- Imagem da biblioteca -->
+            <img src="https://www.ipatrimonio.org/wp-content/uploads/2019/07/ipatrimonio_Biblioteca-P%C3%BAblica_imagem_prefeitura.jpg"
+                alt="Biblioteca Olavo Bilac" class="img-fluid mb-3" style="max-height: 300px; object-fit: cover;">
+            <!-- Botão para acessar o acervo -->
             <a href="{% url 'lista_livros' %}" class="btn btn-custom btn-lg">Acesse o Acervo</a>
         </div>
     </div>
 
     <!-- Seção de últimas notícias -->
     <div class="row mt-5">
-        <h2 class="text-center w-100">Últimas Notícias</h2>
-        {% for noticia in ultimas_noticias %}
-            <div class="noticia">
-                {% if noticia.imagem %}
-                <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}">
-                {% endif %}
-                <h3>{{ noticia.titulo }}</h3>
-                <p>{{ noticia.conteudo|truncatewords:30 }}</p>
-                <a href="{% url 'detalhe_noticia' noticia.id %}">Leia mais</a>
+        <h2 class="text-center w-100 mb-4">Últimas Notícias</h2>
+        <div class="row">
+            {% for noticia in ultimas_noticias|slice:":3" %}
+            <div class="col-md-4 d-flex mb-4">
+                <div class="noticia border p-3">
+                    {% if noticia.imagem %}
+                    <img src="{{ noticia.imagem.url }}" alt="{{ noticia.titulo }}" class="img-fluid mb-2">
+                    {% endif %}
+                    <h3>{{ noticia.titulo }}</h3>
+                    <p class="noticia-text">
+                        {{ noticia.conteudo }}
+                    </p>
+                    <a href="{% url 'detalhe_noticia' noticia.id %}" class="btn btn-sm btn-custom">Leia mais</a>
+                </div>
             </div>
-    {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 
 
     <!-- Botão para acessar mais notícias -->

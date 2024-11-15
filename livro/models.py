@@ -15,13 +15,14 @@ def validate_square_image(image):
     if width != height:
         raise ValidationError("A imagem deve ser quadrada (proporção 1:1).")
 
-    if width != 500 or height != 500:
-        raise ValidationError("A imagem deve ter exatamente 500x500 pixels.")
-
+    if width != 350 or height != 350:
+        raise ValidationError("A imagem deve ter exatamente 350*350 pixels.")
 
 def home(request):
-    noticias = Noticia.objects.all().order_by("-data_publicacao")[:3]
-    return render(request, "home.html", {"noticias": noticias})
+    ultimas_noticias = Noticia.objects.order_by("-data_publicacao")[
+        :3
+    ]  # As 3 mais recentes
+    return render(request, "home.html", {"ultimas_noticias": ultimas_noticias})
 
 
 # Create your models here.
